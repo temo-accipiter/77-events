@@ -10,6 +10,7 @@ describe("When Events is created", () => {
     await screen.findByText("Personel / Entreprise");
   });
 
+  // Vérifie si un clic sur le bouton déclenche l'action de succès
   describe("and a click is triggered on the submit button", () => {
     it("the success action is called", async () => {
       const onSuccess = jest.fn();
@@ -23,6 +24,7 @@ describe("When Events is created", () => {
       );
       await screen.findByText("En cours");
       await screen.findByText("Envoyer");
+      // Vérification, si la fonction onSuccess a été appelée
       expect(onSuccess).toHaveBeenCalled();
     });
   });

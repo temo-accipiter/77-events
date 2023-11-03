@@ -11,11 +11,11 @@ const Form = ({ onSuccess, onError }) => {
   const sendContact = useCallback(
     async (evt) => {
       evt.preventDefault();
-      setSending(true);
+      setSending(true); // Indiquer que l'envoi est en cours
       // We try to call mockContactApi
       try {
         await mockContactApi();
-        setSending(false);
+        setSending(false); // Indiquer que l'envoi est terminé
         onSuccess();
       } catch (err) {
         setSending(false);

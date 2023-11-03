@@ -14,7 +14,8 @@ import { useData } from "../../contexts/DataContext";
 
 const Page = () => {
   const { data } = useData(); 
-  const last = data ? data.events[0] : null;
+  // Afficher la vignette de dernier evenement.
+  const last = data?.events.sort((evtA, evtB) => new Date(evtA.date) < new Date(evtB.date) ? 1 : -1)[0];
   return <>
     <header>
       <Menu />
@@ -59,7 +60,7 @@ const Page = () => {
       <section className="PeoplesContainer" id="notre-equipe">
         <h2 className="Title">Notre équipe</h2>
         <p>Une équipe d’experts dédiés à l’ogranisation de vos événements</p>
-        <div className="ListContainer">
+        <div className="ListContainer" data-testid="people-list-container">
           <PeopleCard
             imageSrc="/images/stephanie-liverani-Zz5LQe-VSMY-unsplash.png"
             name="Samira"
@@ -114,20 +115,20 @@ const Page = () => {
         </Modal>
       </div>
     </main>
-    <footer className="row">
+    <footer data-testid="page-footer" className="row">
       <div className="col presta">
-        {last && ( 
+        {last && (
           <>
             <h3>Notre dernière prestation</h3>
-            <EventCard 
-	            imageSrc={last.cover} 
-	            title={last.title} 
-	            date={new Date(last.date)} 
-              small 
-              label="boom" 
-            /> 
+            <EventCard
+	            imageSrc={last?.cover}
+	            title={last?.title}
+	            date={new Date(last?.date)}
+              small
+              label="boom"
+            />
           </>
-        )} 
+        )}
       </div>
       <div className="col contact">
         <h3>Contactez-nous</h3>
