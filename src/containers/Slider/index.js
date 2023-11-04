@@ -52,7 +52,7 @@ const Slider = () => {
                 type="radio"
                 name="radio-button"
                 checked={index === radioIdx}
-                onChange={() => setIndex(radioIdx)} // Mise à jour de l'index du slider à radioIdx quand l'utilisateur clique sur le bouton radio
+                readOnly
                 />
               );
             })}

@@ -42,16 +42,3 @@ describe("When slider is created", () => {
     );
   });
 });
-
-describe("Pause and resume slider with spacebar", () => {
-  describe("the slider is displayed", () => {
-    it("the spacebar is pressed", () => {
-      // to implement : the slider doesn't show the next image
-    });
-  });
-  describe("the slider is paused", () => {
-    it("the spacebar is pressed", () => {
-      // to implement : the slider shows the next image
-    });
-  });
-});

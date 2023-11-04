@@ -11,7 +11,7 @@ describe("When a page is created", () => {
       });
     });
     
-    it("a list of people is displayed", () => {
+    it("a list of PeopleCard is displayed", () => {
       render(<Home />);
       const listContainer = screen.getByTestId("people-list-container"); // Sélectionnez la div avec la classe "ListContainer"
       const personElements = listContainer.querySelectorAll(".PeopleCard"); // Sélectionnez tous les éléments "PeopleCard" à l'intérieur de la "ListContainer"
